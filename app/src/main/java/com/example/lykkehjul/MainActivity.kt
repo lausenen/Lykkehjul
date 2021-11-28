@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.livesText.setText("Lives: " + lives)
+        binding.livesText.setText("Lives: " + lives.toString())
 
         binding.spinButton.setOnClickListener{
             spinWheel()
@@ -41,10 +41,18 @@ class MainActivity : AppCompatActivity() {
             1 -> setScore(1000)
             2 -> setScore(500)
             3 -> setScore(800)
-            4 -> return//Skip turn
+            4 -> {
+                lives -= 1
+                binding.scoreCurrent.setText("Landed on: Skip turn")
+                binding.livesText.setText("Lives: " + lives.toString())
+            }
             5 -> setScore(666)
             6 -> setScore(700)
-            7 -> return//Extra turn
+            7 -> {
+                lives += 1
+                binding.scoreCurrent.setText("Landed on: Extra turn")
+                binding.livesText.setText("Lives: " + lives.toString())
+            }
             8 -> setScore(-1)
         }
 
