@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class CharAdapter(charArray: CharArray) : RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
+class CharAdapter(charArray: MutableList<Categories.Category.singleChar>) : RecyclerView.Adapter<CharAdapter.CharViewHolder>() {
 
     private val charArray = charArray
 
@@ -35,8 +35,12 @@ class CharAdapter(charArray: CharArray) : RecyclerView.Adapter<CharAdapter.CharV
      * Replaces the content of an existing view with new data
      */
     override fun onBindViewHolder(holder: CharViewHolder, position: Int) {
-        val item = charArray[position]
-        holder.textView.text = item.toString()
+        val item = charArray.get(position)
+        holder.textView.text = ""
+        if(item.isVisible){
+            holder.textView.text = item.char.toString()
+        }
+
     }
 
     override fun getItemCount(): Int {
