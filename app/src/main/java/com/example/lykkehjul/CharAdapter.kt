@@ -12,7 +12,7 @@ class CharAdapter(charArray: MutableList<Categories.Category.singleChar>) : Recy
 
     private val charArray = charArray
 
-    //All of the below code is taken from the kotlin words app codelab in class
+    //All of the below code is taken from the kotlin words app codelab in class with a few changes to onBindViewHolder
     /**
      * Provides a reference for the views needed to display items in your list.
      */

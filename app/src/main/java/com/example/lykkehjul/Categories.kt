@@ -14,7 +14,7 @@ class Categories {
 
         //Would be better for performance using arrays, but im more comfortable using mutableList :)
         val gamesWords = mutableListOf<String>("minecraft", "pacman" , "tetris", "hearthstone")
-        val foodsWords = mutableListOf<String>("cabbage", "carrot" , "obachine", "peach")
+        val foodsWords = mutableListOf<String>("cabbage", "carrot" , "obachine", "guava", "peach")
         val sportsWords = mutableListOf<String>("tennis", "badminton" , "football", "wrestling")
 
         games.addWords(gamesWords)
@@ -24,6 +24,7 @@ class Categories {
 
     }
 
+    //Returns a random category
     fun getRandomCategory(): Category {
         val randNum = Random.nextInt(1,4)
         when(randNum){
@@ -80,6 +81,7 @@ class Categories {
             return singleCharList
         }
 
+        //Simple data class to hold information if the character is visible or not
         data class singleChar(var isVisible: Boolean, val char: Char)
 
     }

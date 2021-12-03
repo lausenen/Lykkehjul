@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjul.databinding.FragmentSecondBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+//All of this comes when you create a new project from android studios, I have only changed the onClickListener for the button
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
@@ -33,7 +31,7 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_secondFragment_to_mainFragment)
         }
     }
 
